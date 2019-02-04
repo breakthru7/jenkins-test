@@ -1,0 +1,78 @@
+/* SASS */
+$primaryColor : #e0e0e0;
+
+.App {
+  text-align: center;
+  background-color: $primaryColor;
+
+  $borderColor : #680796;
+  border: 1px solid $borderColor;
+
+  h1 {
+    color : red; 
+  }
+}
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+
+.AppChild {
+  @extend %small; 
+  border: 1px solid #61dafb;
+
+  @include tablet {
+
+    font-size:15px;
+    color: green;
+  }
+}
+
+%small {
+  background: #acacac;
+}
+
+$container-width : 100%; 
+
+.container {
+  width : $container-width; 
+}
+
+.col-4 {
+  width : $container-width/4; 
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
